@@ -1,0 +1,29 @@
+{
+	"manifest_version": 3,
+	"name": "Grailip",
+	"version": "0.1.0",
+	"version_name": "0.1.0 beta",
+	"action": {
+		"default_icon": {
+			"16": "./icon16.png",
+			"48": "./icon48.png",
+			"128": "./icon128.png"
+		},
+		"default_popup": "popup.html"
+	},
+	"background": {
+		"service_worker": "background.js"
+	},
+	"default_locale": "en",
+	"description": "Web clipping.",
+	"icons": {
+		"16" : "icon16.png",
+		"48" : "icon48.png",
+		"128" : "icon128.png"
+	},
+	"permissions": [
+		"tabs",
+		"pageCapture"
+	],
+	"host_permissions": []
+}

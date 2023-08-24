@@ -1,0 +1,177 @@
+Deno - JavaScriptとTypeScriptのための安全なランタイム
+機能性cookieを使用します。
+ユーザーエクスペリエンスを良くするため機能性cookieを使用します。
+Ok
+Deno 1.9 登場。
+リリースノートを読む
+→
+Deno
+Menu | Deno
+インストール
+マニュアル
+ブログ
+ランタイムAPI
+標準ライブラリ
+サードパーティモジュール
+GitHub
+Github | Deno
+Deno
+JavaScript
+と
+TypeScript
+のための
+安全な
+ランタイム
+v1.9.1
+DenoはJavaScriptとTypeScriptのためのシンプルでモダンで安全なランタイムです。V8を使用し、Rustで書かれています。
+デフォルトで安全。ファイルやネットワークなど環境へのアクセスは明示的に有効にしない限り起こりません。
+最初からTypeScriptをサポート。
+1つの実行ファイルで実行可能。
+依存関係インスペクター(
+deno info
+)やコードフォーマッター(
+deno fmt
+)などのビルトインユーティリティーがあります。
+Denoで動作する審査済み(監査済み)の標準モジュール:
+deno.land/std
+ があります。
+インストール
+Denoは実行ファイル単独で動作します。下記のインストーラーを使ってインストールするか、
+リリースページ
+よりリリースバイナリをダウンロードしてください。
+Shell (Mac, Linux):
+$
+curl
+ -fsSL https://deno.land/x/install/install.sh
+|
+sh
+PowerShell (Windows):
+$
+iwr https://deno.land/x/install/install.ps1 -useb
+|
+ iex
+Homebrew
+ (Mac):
+$
+brew
+install
+ deno
+Chocolatey
+ (Windows):
+$
+choco
+install
+ deno
+Scoop
+ (Windows):
+$
+scoop
+install
+ deno
+Cargo
+を使ってソースコードからビルドしてインストール :
+$
+cargo
+install
+ deno --locked
+他のインストール方法については
+deno_install
+ を参照してください。
+Getting Started
+サンプルプログラムを試す:
+$
+deno run https://deno.land/std/examples/welcome.ts
+より複雑なプログラム:
+import
+{
+ serve
+}
+from
+"https://deno.land/std@0.94.0/http/server.ts"
+;
+const
+ s
+=
+serve
+(
+{
+ port
+:
+8000
+}
+)
+;
+console
+.
+log
+(
+"http://localhost:8000/"
+)
+;
+for
+await
+(
+const
+ req
+of
+ s
+)
+{
+  req
+.
+respond
+(
+{
+ body
+:
+"Hello World\n"
+}
+)
+;
+}
+より詳細な説明、サンプル、環境構築の方法については
+マニュアル
+を参照してください。
+ランタイムドキュメント
+基本的なDenoランタイムのドキュメントは
+doc.deno.land
+ を参照してください。
+ランタイムのより複雑な機能、Denoのコンセプトの紹介、 Denoの内部の詳細、アプリケーションへの組み込み方法や Rustプラグインでの拡張は
+マニュアル
+ を参照してください。
+マニュアルにはDenoが提供する標準ツールの情報も含まれています。
+標準モジュール
+Denoコアチームによる、Deno動作保証済みの標準モジュールです。 これらはDenoのソースコードとともに
+denoland/deno
+ にあります。
+これら標準モジュールは
+deno.land/std
+ でホストされており、Denoで動く他のESモジュール同様URLで配布されています。
+サードパーティモジュール
+DenoはGitHub、個人のWebサーバー、
+pika.dev
+ や
+jspm.io
+ などのCDNなどWebのあらゆる場所からモジュールをインポートすることが出来ます。
+サードパーティモジュールを簡単に使用するため、Denoは
+deno info
+ や
+deno doc
+などのビルトインツールを持っています。 deno.landはモジュールのドキュメントを見るためのWeb UIを提供しています。
+doc.deno.land
+ を参照してください。
+またdeno.landはDenoで動作するESモジュールのための シンプルなホスティングサービスも提供しています。
+deno.land/x
+ を参照してください。
+マニュアル
+ランタイムAPI
+標準ライブラリ
+サードパーティモジュール
+ベンチマーク
+アートワーク
+ブログ
+翻訳
+System Status
+GitHub
+Discord
+Twitter
