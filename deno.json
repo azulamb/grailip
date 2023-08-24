@@ -1,0 +1,27 @@
+{
+	"lock": false,
+	"tasks": {
+		"manifest": "deno run --allow-read --allow-write tools/manifest.ts",
+		"parse": "deno run --allow-read --allow-write tools/mhtml.ts"
+	},
+	"lint": {
+		"files": {
+			"include": ["./src", "./libs", "./tools"]
+		},
+		"rules": {
+			"tags": ["recommended"],
+			"include": [],
+			"exclude": ["require-await"]
+		}
+	},
+	"fmt": {
+		"include": ["./src", "./libs", "./tools"],
+		"useTabs": true,
+		"indentWidth": 4,
+		"lineWidth": 160,
+		"singleQuote": true
+	},
+	"imports": {
+		"$std/": "https://deno.land/std@0.198.0/"
+	}
+}
