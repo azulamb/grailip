@@ -1,0 +1,19 @@
+name: Deploy to Cloudflare
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    name: Deploy
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          workingDirectory: ./worker
+          apiToken: ${{ secrets.CF_API_TOKEN }}

@@ -18,3 +18,20 @@ Grailip is web clipping app.
   * 広告を削除した状態で登録
 * 検索結果の広告を削除してアップデート
 
+## 構成
+
+* 本体
+  * Deno Deploy
+  * サービスの提供
+* 検索
+  * Elasticsearch
+    * ElasticCloudを使用。
+    * 直に叩けるので単体運用
+* クリップ
+  * CloudflareのR2とWorker
+    * R2に保存したりする認証付きAPIをWorkerで提供
+
+## Secrets
+
+* CF_API_TOKEN
+
