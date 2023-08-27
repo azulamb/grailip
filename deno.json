@@ -2,11 +2,13 @@
 	"lock": false,
 	"tasks": {
 		"manifest": "deno run --allow-read --allow-write tools/manifest.ts",
-		"parse": "deno run --allow-read --allow-write tools/mhtml.ts"
+		"parse": "deno run --allow-read --allow-write tools/mhtml.ts",
+		"denoflare": "deno install --unstable --allow-read --allow-net --allow-env --allow-run --name denoflare --force https://raw.githubusercontent.com/skymethod/denoflare/v0.5.12/cli/cli.ts",
+		"worker": "denoflare serve worker/main.ts"
 	},
 	"lint": {
 		"files": {
-			"include": ["./src", "./libs", "./tools"]
+			"include": ["./src", "./libs", "./tools", "./server", "./worker"]
 		},
 		"rules": {
 			"tags": ["recommended"],
@@ -15,7 +17,7 @@
 		}
 	},
 	"fmt": {
-		"include": ["./src", "./libs", "./tools"],
+		"include": ["./src", "./libs", "./tools", "./server", "./worker"],
 		"useTabs": true,
 		"indentWidth": 4,
 		"lineWidth": 160,
