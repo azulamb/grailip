@@ -17,4 +17,4 @@ jobs:
         with:
           workingDirectory: ./worker
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          main: main.ts
+          main: ./worker/main.ts
