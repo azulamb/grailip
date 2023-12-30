@@ -144,7 +144,7 @@ class MimePart {
 	public nextHeader(line: string, filter: RegExp) {
 		if (!line) {
 			this.endHeader = true;
-			this.skipContents = !filter.test(this.headers['Content-Type']||'');
+			this.skipContents = !filter.test(this.headers['Content-Type'] || '');
 		} else {
 			const [key, ...value] = line.split(':');
 			this.headers[key] = value.join(':').trim();

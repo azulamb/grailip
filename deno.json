@@ -23,6 +23,11 @@
 		"lineWidth": 160,
 		"singleQuote": true
 	},
+	"compilerOptions": {
+		"types": [
+			
+		]
+	},
 	"imports": {
 		"$std/": "https://deno.land/std@0.198.0/"
 	}
